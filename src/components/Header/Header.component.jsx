@@ -1,6 +1,8 @@
 import React from 'react';
 import Logo from '../../assets/MemoCards.png';
 import SearchIcon from '../../assets/Group.svg';
+import Button from '../shared/Button';
+import SearchBar from '../shared/SearchBar';
 
 function Header() {
   return (
@@ -8,31 +10,36 @@ function Header() {
       <header>
         <nav className="bg-white shadow-md">
           <div className="flex justify-between mx-8 pt-6 pb-4">
+            {/* Logo */}
             <div className="w-80">
               <img src={Logo} alt="MemoCards Logo" />
             </div>
             <div className="flex flex-col">
+              {/* Items list */}
               <ul className="flex items-center space-x-10 mb-5">
-                <li>Courses</li>
-                <li>Ask EDI</li>
-                <li>FlashCards</li>
-                <li>Practice Tests</li>
+                <li>
+                  <a href="#">Courses</a>
+                </li>
+                <li>
+                  <a href="#">Ask EDI</a>
+                </li>
+                <li>
+                  <a href="#">FlashCards</a>
+                </li>
+                <li>
+                  <a href="#">Practice Tests</a>
+                </li>
               </ul>
+              {/* Search bar */}
               <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Type a question..."
-                  className="py-2 pl-14  w-full outline-none border-solid border-2 border-orange-400 rounded-xl  "
-                />
-                <button className="absolute  text-gray-500  left-3 top-1/2  transform -translate-y-1/2">
-                  <img src={SearchIcon} alt="Search Icon" className="h-5 w-5" />
-                </button>
+                <SearchBar SearchIcon={SearchIcon} />
               </div>
             </div>
             <div className="flex items-start space-x-2">
-              <button>SignUp</button>
+              {/* Auth items */}
+              <Button>SignUp</Button>
               <span>|</span>
-              <button>LogOut</button>
+              <Button>LogIn</Button>
             </div>
           </div>
         </nav>
